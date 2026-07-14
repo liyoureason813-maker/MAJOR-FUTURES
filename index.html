@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI时代大学专业与职业路径地图：具体方向、对应岗位、学历要求与申读建议。" />
+  <title>MAJOR FUTURES｜专业与AI职业地图 V2.3</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark">M∕F</span>
+      <span><strong data-i18n="brandMain">专业 × AI</strong><small data-i18n="brandSub">方向·岗位·学历地图</small></span>
+    </a>
+    <nav>
+      <a href="#explore" data-i18n="navExplore">探索专业</a>
+      <a href="#method" data-i18n="navMethod">判断方法</a>
+      <a href="#sources" data-i18n="navSources">资料来源</a>
+    </nav>
+    <div class="top-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="zh" class="active">中文</button><button type="button" data-lang="en">EN</button>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="切换深浅模式">◐</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero hero-v23">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">AI ERA · UNIVERSITY MAJOR & CAREER ATLAS · 2026</p>
+        <h1 class="future-title" aria-label="Major Futures"><span>MAJOR</span><em>FUTURES</em></h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">AI时代大学专业与职业路径地图</p>
+        <p class="hero-lead" data-i18n="heroLead">从 28 个主流专业出发，拆解 252 个具体方向、756 个岗位示例与学历路径。看清哪些基础工作正在被重写，哪些能力更值得长期投入。</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#explore"><span data-i18n="startExplore">开始探索</span><b>↘</b></a>
+          <button class="ghost-btn" id="randomMajor" data-i18n="randomMajor">随机查看一个专业</button>
+        </div>
+      </div>
+      <div class="hero-panel future-console">
+        <div class="console-grid"></div>
+        <div class="panel-top"><span data-i18n="panelTitle">FUTURE SIGNALS</span><span class="live-dot" data-i18n="panelDate">2026.07 · V2.3</span></div>
+        <div class="console-orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="orbit-core">AI</div></div>
+        <div class="zone-preview high-preview"><b data-i18n="high">AI 高危区</b><span data-i18n="highDesc">重复执行、套模板、容易检查</span><small data-i18n="highEx">基础报表 · 模板化内容 · 常规制图</small></div>
+        <div class="zone-preview edge-preview"><b data-i18n="border">AI 骑线区</b><span data-i18n="borderDesc">AI能做一部分，人仍需判断和落地</span><small data-i18n="borderEx">常规分析 · 一般开发 · 标准咨询</small></div>
+        <div class="zone-preview safe-preview"><b data-i18n="safe">AI 安全区</b><span data-i18n="safeDesc">依赖现场、责任、信任或原创研究</span><small data-i18n="safeEx">临床 · 核心研发 · 复杂工程 · 谈判</small></div>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Key figures">
+      <div><strong>28</strong><span data-i18n="majors">主流专业</span></div><div><strong>252</strong><span data-i18n="directions">具体方向</span></div><div><strong>3</strong><span data-i18n="zones">风险分区</span></div><div><strong>756</strong><span data-i18n="roles">岗位与学历提示</span></div>
+    </section>
+
+    <section id="explore" class="explore-section">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="exploreEye">EXPLORE THE ATLAS</p><h2 data-i18n="exploreTitle">从专业，走到具体职业路径</h2></div><p data-i18n="exploreDesc">每张卡片直接展示高危方向、更稳方向、岗位示例和学历提示；点击后可查看完整的 9 个方向。</p></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="搜索专业、方向或岗位…" autocomplete="off" /><kbd>/</kbd></label><select id="sortSelect" aria-label="Sort"></select></div>
+      <div id="categoryFilters" class="filter-row" aria-label="Categories"></div>
+      <div class="legend"><span><i class="dot high"></i><b data-i18n="legendHigh">高危：基础岗位最容易减少</b></span><span><i class="dot edge"></i><b data-i18n="legendBorder">骑线：做得浅容易被替代</b></span><span><i class="dot safe"></i><b data-i18n="legendSafe">安全：更依赖判断、现场或责任</b></span><small data-i18n="legendNote">判断的是具体方向和岗位，不是给整个专业贴“好”或“坏”的标签。</small></div>
+      <div id="majorGrid" class="major-grid"></div><div id="emptyState" class="empty-state" hidden><strong data-i18n="noMatch">没有匹配的专业</strong><span data-i18n="noMatchSub">试试更短的关键词或切换专业类别。</span></div>
+    </section>
+
+    <section id="method" class="method-section">
+      <div class="section-heading light"><div><p class="eyebrow" data-i18n="methodEye">HOW TO READ THE MAP</p><h2 data-i18n="methodTitle">判断一个方向，先看每天具体做什么</h2></div><p data-i18n="methodDesc">不用记复杂术语。看工作是否标准化、是否必须面对真人或现场，以及出错后谁承担责任。</p></div>
+      <div class="method-layout"><div class="method-sticky"><div class="method-ring"><span data-i18n="ringTop">真正的分界线</span><strong data-i18n="ringMain">不是专业名称</strong><small data-i18n="ringSmall">同一个专业里，模板化执行和复杂判断的前景可能完全不同。</small></div><p data-i18n="ringNote">网站把每个专业拆成 9 个方向，再列出对应岗位与学历要求，帮助学生从“想学什么”继续追问到“毕业后具体做什么”。</p></div>
+      <div class="method-cards"><article><b>01</b><h3 data-i18n="m1t"></h3><p data-i18n="m1p"></p></article><article><b>02</b><h3 data-i18n="m2t"></h3><p data-i18n="m2p"></p></article><article><b>03</b><h3 data-i18n="m3t"></h3><p data-i18n="m3p"></p></article><article><b>04</b><h3 data-i18n="m4t"></h3><p data-i18n="m4p"></p></article><article><b>05</b><h3 data-i18n="m5t"></h3><p data-i18n="m5p"></p></article><article><b>06</b><h3 data-i18n="m6t"></h3><p data-i18n="m6p"></p></article></div></div>
+      <div class="principle-banner"><span data-i18n="principleSmall">没有哪个方向能保证永远不受AI影响。</span><strong data-i18n="principleMain">更好的选择，是让AI提高效率，而把重要的判断、沟通、现场处理和责任留在自己手里。</strong></div>
+    </section>
+
+    <section class="strategy-section"><div class="section-heading"><div><p class="eyebrow" data-i18n="strategyEye">APPLICATION STRATEGY</p><h2 data-i18n="strategyTitle">面向高中生的四条申读原则</h2></div></div><div class="strategy-grid"><article><span>01</span><h3 data-i18n="s1t"></h3><p data-i18n="s1p"></p></article><article><span>02</span><h3 data-i18n="s2t"></h3><p data-i18n="s2p"></p></article><article><span>03</span><h3 data-i18n="s3t"></h3><p data-i18n="s3p"></p></article><article><span>04</span><h3 data-i18n="s4t"></h3><p data-i18n="s4p"></p></article></div></section>
+
+    <section id="sources" class="sources-section"><div class="section-heading"><div><p class="eyebrow" data-i18n="sourcesEye">EVIDENCE BASE</p><h2 data-i18n="sourcesTitle">资料来源与使用边界</h2></div><p data-i18n="sourcesDesc">AI风险判断参考国际研究；岗位名称和学历要求参考英美官方职业资料，并结合专业培养路径整理。</p></div>
+      <div class="sources-grid">
+        <a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update" target="_blank" rel="noreferrer"><span>ILO · 2025</span><strong>Generative AI and Jobs</strong><small>Occupational exposure and job transformation</small></a>
+        <a href="https://www.oecd.org/en/publications/2026/05/the-oecd-ai-exposure-measure_489cfd42.html" target="_blank" rel="noreferrer"><span>OECD · 2026</span><strong>AI Exposure Measure</strong><small>Cognitive, social and physical capability gaps</small></a>
+        <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noreferrer"><span>WEF · 2025</span><strong>Future of Jobs Report</strong><small>Roles, skills and workforce change</small></a>
+        <a href="https://www.bls.gov/ooh/" target="_blank" rel="noreferrer"><span>US BLS</span><strong>Occupational Outlook Handbook</strong><small>Role duties and typical entry education</small></a>
+        <a href="https://nationalcareers.service.gov.uk/explore-careers" target="_blank" rel="noreferrer"><span>UK GOV</span><strong>National Careers Service</strong><small>Career routes and qualifications</small></a>
+        <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noreferrer"><span>ANTHROPIC</span><strong>Economic Index</strong><small>Observed AI use and task patterns</small></a>
+        <a href="https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html" target="_blank" rel="noreferrer"><span>PwC</span><strong>Global AI Jobs Barometer</strong><small>Skills, productivity and recruitment</small></a>
+        <a href="https://degrees.apps.asu.edu/bachelors/major/ASU00/BABDABS/business-data-analytics" target="_blank" rel="noreferrer"><span>ASU</span><strong>Business Data Analytics</strong><small>Curriculum reference</small></a>
+      </div>
+      <div class="disclaimer"><strong data-i18n="disclaimerTitle">重要说明</strong><p data-i18n="disclaimer1"></p><p data-i18n="disclaimer2"></p></div>
+    </section>
+  </main>
+  <footer><div class="brand footer-brand"><span class="brand-mark">M∕F</span><span><strong data-i18n="brandMain">专业 × AI</strong><small data-i18n="brandSub">方向·岗位·学历地图</small></span></div><p data-i18n="footerText"></p><a href="#top" data-i18n="backTop">返回顶部 ↑</a></footer>
+  <div id="compareTray" class="compare-tray" hidden><div><strong data-i18n="compare">专业对比</strong><span id="compareNames"></span></div><button id="clearCompare" class="text-btn" data-i18n="clear">清空</button><button id="openCompare" class="primary-btn small" disabled data-i18n="startCompare">开始对比</button></div>
+  <dialog id="majorDialog" class="major-dialog"><button class="dialog-close" data-close aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <dialog id="compareDialog" class="compare-dialog"><button class="dialog-close" data-close aria-label="Close">×</button><div id="compareContent"></div></dialog>
+  <script src="app.js"></script>
+</body></html>
