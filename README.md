@@ -1,14 +1,22 @@
-# MAJOR FUTURES V3.4
+# MAJOR FUTURES V3.5｜无登录公开版
 
-AI时代大学专业、职业路径与A-Level课程匹配网站。
+此版本已移除家长登记、登录状态、退出按钮及 Google Sheet 相关代码。
 
-本版新增：
+## GitHub Pages 部署
 
-- 家长登记后进入网站
-- 登记信息提交至管理者的 Google Sheet
-- 顶部显示当前家长姓名与退出入口
-- 首页和各内容区统一左右边界，强化对称布局
-- 优化中文换行，减少末行孤字
-- 保留中英文切换、课程匹配、专业AI方向和学历分析
+将本文件夹中的以下文件上传到 GitHub 仓库根目录并覆盖旧文件：
 
-部署前请先阅读 `SETUP_家长登记.md`，并在 `registration-config.js` 中填入 Google Apps Script Web App 地址。
+- `index.html`
+- `styles.css`
+- `app.js`
+- `matcher.js`
+- `README.md`
+
+然后确认：
+
+- Settings → Pages
+- Source：Deploy from a branch
+- Branch：main
+- Folder：/(root)
+
+网站地址保持不变。更新后可在网址末尾加 `?v=35` 并按 `Ctrl + Shift + R` 强制刷新。
