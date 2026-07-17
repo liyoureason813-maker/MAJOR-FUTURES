@@ -833,3 +833,13 @@ body.dialog-open{overflow:hidden}
  .holland-history-actions{grid-column:2;justify-content:flex-start}
  .holland-launch-actions small{flex-basis:100%}
 }
+
+
+/* V4.2.1 — clean Holland preview footer and separate the E axis label */
+.holland-preview svg{transform:translateY(-14px)}
+.holland-preview-code{justify-content:space-between}
+.holland-preview-code strong{display:none!important}
+@media(max-width:680px){
+  .holland-preview svg{transform:translateY(-10px);width:min(91%,410px)}
+  .holland-preview-code{inset:auto 18px 16px 18px;padding-top:11px}
+}
