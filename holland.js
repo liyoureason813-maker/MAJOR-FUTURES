@@ -16,7 +16,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     noHistory:'还没有完成的测评记录。',viewRecord:'查看结果',deleteRecord:'删除',clearHistory:'清空记录',
     clearConfirm:'确定清空当前浏览器中的全部测评记录吗？',deleteConfirm:'确定删除这条测评记录吗？',
     back:'返回上一个页面',recordDate:'测评时间',recordId:'记录编号',newAssessment:'开始新的测评',
-    savedNotice:'本次结果已保存到测评记录。',historyCount:'共 {x} 条记录'
+    savedNotice:'本次结果已保存到测评记录。',historyCount:'共 {x} 条记录',combined:'兴趣＋课程综合匹配',combinedShort:'综合匹配'
   });
   Object.assign(hollandText.en,{
     print:'Export report',exporting:'Creating PDF…',exportFailed:'The PDF could not be created. Please try again.',
@@ -24,7 +24,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     noHistory:'No completed assessment has been saved yet.',viewRecord:'View result',deleteRecord:'Delete',clearHistory:'Clear all',
     clearConfirm:'Clear all assessment records stored in this browser?',deleteConfirm:'Delete this assessment record?',
     back:'Back',recordDate:'Completed',recordId:'Record ID',newAssessment:'Start a new assessment',
-    savedNotice:'This result has been saved to your assessment history.',historyCount:'{x} records'
+    savedNotice:'This result has been saved to your assessment history.',historyCount:'{x} records',combined:'Combine interests and subjects',combinedShort:'Combined match'
   });
 
   const PROGRESS_STORAGE='major_futures_holland_progress_v2';
@@ -80,7 +80,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     const record={
       id:`HF-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,5).toUpperCase()}`,
       createdAt:new Date().toISOString(),
-      answers:[...state.answers],result:JSON.parse(JSON.stringify(result)),version:'4.2'
+      answers:[...state.answers],result:JSON.parse(JSON.stringify(result)),version:'4.3'
     };
     const records=loadHistory();
     records.unshift(record);saveHistory(records);state.recordId=record.id;clearProgress();return record;
@@ -116,7 +116,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     return `<section class="holland-history" id="hollandHistory"><header><div><p>YOUR SAVED PROFILES</p><h3>${tx('historyTitle')}</h3><span>${tx('historyDesc')}</span></div>${records.length?`<button class="text-btn danger" data-holland-clear-history type="button">${tx('clearHistory')}</button>`:''}</header>
       ${records.length?`<div class="holland-history-list">${records.map((r,i)=>{
         const top=r.result.ranked.slice(0,3);
-        return `<article data-holland-record="${r.id}"><div class="holland-history-index">${String(i+1).padStart(2,'0')}</div><div class="holland-history-main"><div><strong>${r.result.code}</strong><span>${top.map(x=>`${x.k} ${local(hollandTypes[x.k])}`).join(' · ')}</span></div><small>${formatDate(r.createdAt)} · ${r.id}</small></div><div class="holland-history-actions"><button type="button" data-holland-record="${r.id}">${tx('viewRecord')}</button><button type="button" data-holland-export-record="${r.id}">${tx('print')}</button><button class="danger" type="button" data-holland-delete-record="${r.id}">${tx('deleteRecord')}</button></div></article>`;
+        return `<article data-holland-record="${r.id}"><div class="holland-history-index">${String(i+1).padStart(2,'0')}</div><div class="holland-history-main"><div><strong>${r.result.code}</strong><span>${top.map(x=>`${x.k} ${local(hollandTypes[x.k])}`).join(' · ')}</span></div><small>${formatDate(r.createdAt)} · ${r.id}</small></div><div class="holland-history-actions"><button type="button" data-holland-record="${r.id}">${tx('viewRecord')}</button><button type="button" data-combined-open="${r.id}">${tx('combinedShort')}</button><button type="button" data-holland-export-record="${r.id}">${tx('print')}</button><button class="danger" type="button" data-holland-delete-record="${r.id}">${tx('deleteRecord')}</button></div></article>`;
       }).join('')}</div>`:`<div class="holland-history-empty"><strong>${tx('noHistory')}</strong><span>RIASEC · MAJOR FUTURES</span></div>`}</section>`;
   }
 
@@ -158,7 +158,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
   function resultScreen(){
     const result=state.result||score();state.result=result;const alts=altCodes(result.ranked),matches=matchMajors(result);const record=getRecord(state.recordId);const created=record?.createdAt||new Date().toISOString();
     return `<section class="holland-result-screen"><button class="subpage-back holland-stage-back" data-holland-stage-back type="button">← ${tx('back')}</button>
-      <header class="holland-result-hero"><div><p>${tx('resultEye')}</p><h2>${tx('resultTitle')}</h2><div class="holland-code-line"><strong>${result.code}</strong>${alts.length?`<span>${tx('altCode')} ${alts.join(' / ')}</span>`:''}</div><small class="holland-record-meta">${tx('recordDate')}：${formatDate(created)} · ${tx('recordId')}：${state.recordId||'—'}</small></div><div class="holland-result-actions"><button class="ghost-btn" data-holland-export type="button">${tx('print')}</button><button class="ghost-btn" data-holland-reset type="button">${tx('retake')}</button><button class="primary-btn" data-holland-close type="button">${tx('close')}</button></div></header>
+      <header class="holland-result-hero"><div><p>${tx('resultEye')}</p><h2>${tx('resultTitle')}</h2><div class="holland-code-line"><strong>${result.code}</strong>${alts.length?`<span>${tx('altCode')} ${alts.join(' / ')}</span>`:''}</div><small class="holland-record-meta">${tx('recordDate')}：${formatDate(created)} · ${tx('recordId')}：${state.recordId||'—'}</small></div><div class="holland-result-actions"><button class="primary-btn" data-combined-open="${state.recordId||''}" type="button">${tx('combined')}</button><button class="ghost-btn" data-holland-export type="button">${tx('print')}</button><button class="ghost-btn" data-holland-reset type="button">${tx('retake')}</button><button class="primary-btn" data-holland-close type="button">${tx('close')}</button></div></header>
       <div class="holland-saved-notice">✓ ${tx('savedNotice')}</div>
       <div class="holland-result-grid"><div class="holland-chart-card"><div class="holland-card-kicker">RIASEC PROFILE</div><h3>${tx('scoreTitle')}</h3>${chart(result)}<div class="holland-score-bars">${result.ranked.map(x=>`<div><span><b style="--type:${hollandTypes[x.k].color}">${x.k}</b>${local(hollandTypes[x.k])}</span><i><em style="width:${x.score/40*100}%;--type:${hollandTypes[x.k].color}"></em></i><strong>${x.score}<small>/40</small></strong></div>`).join('')}</div></div><article class="holland-analysis-card"><div class="holland-card-kicker">INTERPRETATION</div><h3>${tx('analysisTitle')}</h3>${analysis(result)}<div class="holland-top-types holland-top-types-compact">${result.ranked.slice(0,3).map((x,i)=>`<section style="--type:${hollandTypes[x.k].color}"><b>${x.k}</b><div><span>0${i+1}</span><strong>${local(hollandTypes[x.k])}</strong><p>${lang()==='en'?hollandTypes[x.k].coreEn:hollandTypes[x.k].coreZh}</p></div></section>`).join('')}</div><div class="holland-verify holland-verify-compact"><h4>${tx('nextVerify')}</h4><p>${compactVerify(result)}</p></div></article></div>
       <section class="holland-major-results"><div class="holland-major-heading"><div><p>RIASEC × MAJOR FUTURES</p><h3>${tx('majorTitle')}</h3></div><span>${tx('majorDesc')}</span></div><div class="holland-major-grid">${matches.map((x,i)=>{const m=majors.find(y=>y.id===x.id);return `<article data-holland-major="${x.id}"><div class="holland-major-rank">${String(i+1).padStart(2,'0')}</div><div><h4>${majorDisplay(m)}</h4><small>${lang()==='en'?m.name:m.en}</small><p>${tx('matchWhy',{types:x.types.map(k=>`${k} ${local(hollandTypes[k])}`).join(' · ')})}</p></div><div class="holland-major-score"><strong>${x.score}<span>%</span></strong><small>${bandLabel(x.score)}</small><button type="button">${tx('viewMajor')} →</button></div></article>`;}).join('')}</div></section>
@@ -229,6 +229,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     const ans=e.target.closest('[data-holland-answer]');if(ans){const [id,val]=ans.dataset.hollandAnswer.split(':').map(Number);state.answers[id-1]=val;saveProgress();render();return;}
     if(e.target.closest('[data-holland-prev]')){state.page=Math.max(0,state.page-1);saveProgress();render();return;}
     if(e.target.closest('[data-holland-next]')){const start=state.page*10;if(state.answers.slice(start,start+10).some(x=>x===null)){const alert=app.querySelector('.holland-inline-alert');if(alert){alert.hidden=false;setTimeout(()=>alert.hidden=true,2200);}return;}if(state.page<5){state.page++;saveProgress();render();}else{state.result=score();const record=createRecord(state.result);state.recordId=record.id;state.stage='result';render();}return;}
+    const combinedBtn=e.target.closest('[data-combined-open]');if(combinedBtn){const id=combinedBtn.dataset.combinedOpen||state.recordId;if(window.CombinedMatcher&&id){window.CombinedMatcher.open(id);}return;}
     const exportBtn=e.target.closest('[data-holland-export]');if(exportBtn){await exportRecord(getRecord(state.recordId)||{id:state.recordId||'CURRENT',createdAt:new Date().toISOString(),answers:[...state.answers],result:state.result},exportBtn);return;}
     const exportRecordBtn=e.target.closest('[data-holland-export-record]');if(exportRecordBtn){e.stopPropagation();await exportRecord(getRecord(exportRecordBtn.dataset.hollandExportRecord),exportRecordBtn);return;}
     const deleteBtn=e.target.closest('[data-holland-delete-record]');if(deleteBtn){e.stopPropagation();if(confirm(tx('deleteConfirm'))){deleteRecord(deleteBtn.dataset.hollandDeleteRecord);render();}return;}
@@ -245,6 +246,6 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
 
   dialog.addEventListener('close',()=>document.body.classList.remove('dialog-open'));
   document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(()=>{syncStatic();if(dialog.open)render();},0)));
-  window.HollandAssessment={open,openRecord,history:loadHistory,exportRecordById:id=>exportRecord(getRecord(id))};
+  window.HollandAssessment={open,openRecord,history:loadHistory,getRecord,exportRecordById:id=>exportRecord(getRecord(id))};
   syncStatic();
 })();

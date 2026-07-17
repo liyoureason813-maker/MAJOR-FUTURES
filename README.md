@@ -1,28 +1,24 @@
-# MAJOR FUTURES V4.2
+# MAJOR FUTURES V4.3
 
-星海实验高级中学融致国际课程项目专业选择系统。
+星海实验高级中学融致国际课程项目 College Counseling 自主研发学生专业选择系统。
 
-本版本新增与完善：
-- 60题高中生霍兰德 RIASEC 职业兴趣测评
-- 0–4 五级评分、自动计分与三字母霍兰德代码
-- RIASEC 六边形图与六类分数
-- 精简、自然的结果解读和下一步验证建议
-- 与网站现有 28 个专业匹配，点击专业可进入原有完整专业详情
-- 专业详情页增加“返回上一个页面”，可回到原测评结果继续查看其他专业
-- “导出报告”会在浏览器本地生成并下载两页 PDF 报告，不需要服务器
-- 测评结果自动保存在当前浏览器，可查看、单条删除或全部清空
-- 中文 / 英文切换与答题进度保存
+## V4.3 新增
 
-## GitHub Pages 部署
+- 霍兰德测评结果与 A-Level 课程组合综合匹配
+- 从已保存的任意测评记录进入综合匹配
+- Mathematics 与 Chinese 固定；Chemistry / Economics 二选一；Psychology / Further Mathematics / Biology / Business 四选一；Physics 可选
+- 综合结果同时显示兴趣匹配、课程准备和综合匹配度
+- 点击专业后进入原有专业详情，返回时继续保留综合匹配页面
+- 每条测评记录分别保存所选课程组合
+
+## GitHub Pages
 
 将以下文件上传到仓库根目录：
-- `index.html`
-- `styles.css`
-- `app.js`
-- `matcher.js`
-- `holland.js`
-- `README.md`
 
-测评记录保存在浏览器的 localStorage 中。同一浏览器再次打开网站时可以继续查看；更换设备、使用其他浏览器或清除网站数据后，原记录不会自动同步。
-
-本测评用于学校生涯探索和升学讨论，不作为心理诊断、招生筛选或高风险决策工具。
+- index.html
+- styles.css
+- app.js
+- matcher.js
+- holland.js
+- combined.js
+- README.md
