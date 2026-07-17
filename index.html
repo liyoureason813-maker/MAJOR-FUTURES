@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="AI时代大学专业、职业路径与A-Level课程匹配地图。" name="description"/>
-<title>MAJOR FUTURES｜星海融致专业选择系统 V3.8.3</title>
+<title>MAJOR FUTURES｜星海融致专业选择系统 V4.2</title>
 
-<link href="styles.css?v=3.8.3" rel="stylesheet"/>
+<link href="styles.css?v=4.2" rel="stylesheet"/>
 </head>
 <body>
 
@@ -18,6 +18,7 @@
 <span class="brand-copy"><strong>MAJOR FUTURES</strong><small><span class="zh-only">星海实验高级中学融致国际课程项目</span><span class="en-only">XINGHAI FUSIONVISION CURRICULUM CENTER</span></small></span>
 </a>
 <nav>
+<a data-holland-text="nav" href="#interest">兴趣测评</a>
 <a data-match-text="nav" href="#matcher">课程匹配</a>
 <a data-i18n="navExplore" href="#explore">探索专业</a>
 <a data-i18n="navMethod" href="#method">判断方法</a>
@@ -43,14 +44,15 @@
 <p class="hero-subtitle" data-i18n="heroSubtitle">AI时代大学专业与职业路径地图</p>
 <p class="hero-lead" data-i18n="heroLead">把专业方向、未来岗位、学历要求和A-Level选课放进同一套规划工具，让学生更清楚地决定下一步。</p>
 <div class="hero-actions">
-<a class="primary-btn" href="#matcher"><span data-match-text="heroCta">按课程找专业</span><b>↘</b></a>
+<button class="primary-btn" data-holland-open type="button"><span data-holland-text="heroCta">做职业兴趣测评</span><b>↘</b></button>
+<a class="ghost-btn" href="#matcher"><span data-match-text="heroCta">按课程找专业</span></a>
 <a class="ghost-btn" href="#explore"><span data-i18n="startExplore">开始探索</span></a>
 <button class="ghost-btn" data-i18n="randomMajor" id="randomMajor">随机查看一个专业</button>
 </div>
 </div>
 <div class="hero-panel future-console">
 <div class="console-grid"></div>
-<div class="panel-top"><span data-i18n="panelTitle">FUTURE SIGNALS</span><span class="live-dot" data-i18n="panelDate">2026.07 · V3.8.3</span></div>
+<div class="panel-top"><span data-i18n="panelTitle">FUTURE SIGNALS</span><span class="live-dot" data-i18n="panelDate">2026.07 · V4.2</span></div>
 <div class="console-orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="orbit-core">AI</div></div>
 <div class="zone-preview high-preview"><b data-i18n="high">AI 高危区</b><span data-i18n="highDesc">重复执行、套模板、容易检查</span><small data-i18n="highEx">基础报表 · 模板化内容 · 常规制图</small></div>
 <div class="zone-preview edge-preview"><b data-i18n="border">AI 骑线区</b><span data-i18n="borderDesc">AI能做一部分，人仍需判断和落地</span><small data-i18n="borderEx">常规分析 · 一般开发 · 标准咨询</small></div>
@@ -62,8 +64,38 @@
 </section>
 <section aria-label="Platform capabilities" class="motion-ribbon">
   <div class="motion-track">
-    <span>COURSE FIT</span><i>✦</i><span>MAJOR PATHWAYS</span><i>✦</i><span>AI OUTLOOK</span><i>✦</i><span>CAREER ROLES</span><i>✦</i><span>DEGREE LEVELS</span><i>✦</i><span>SUPER-CURRICULAR</span><i>✦</i>
-    <span>COURSE FIT</span><i>✦</i><span>MAJOR PATHWAYS</span><i>✦</i><span>AI OUTLOOK</span><i>✦</i><span>CAREER ROLES</span><i>✦</i><span>DEGREE LEVELS</span><i>✦</i><span>SUPER-CURRICULAR</span><i>✦</i>
+    <span>RIASEC INTERESTS</span><i>✦</i><span>COURSE FIT</span><i>✦</i><span>MAJOR PATHWAYS</span><i>✦</i><span>AI OUTLOOK</span><i>✦</i><span>CAREER ROLES</span><i>✦</i><span>DEGREE LEVELS</span><i>✦</i><span>SUPER-CURRICULAR</span><i>✦</i>
+    <span>RIASEC INTERESTS</span><i>✦</i><span>COURSE FIT</span><i>✦</i><span>MAJOR PATHWAYS</span><i>✦</i><span>AI OUTLOOK</span><i>✦</i><span>CAREER ROLES</span><i>✦</i><span>DEGREE LEVELS</span><i>✦</i><span>SUPER-CURRICULAR</span><i>✦</i>
+  </div>
+</section>
+<section aria-labelledby="interestTitle" class="holland-section" id="interest">
+  <div class="section-heading holland-heading">
+    <div><p class="eyebrow" data-holland-text="eye">RIASEC INTEREST PROFILE</p><h2 id="interestTitle" data-holland-text="title">兴趣坐标：你更愿意怎样工作</h2></div>
+    <p data-holland-text="desc">60个现代高中情境，帮你看清偏好的工作内容与方式。结果会连接到网站现有的专业分析。</p>
+  </div>
+  <div class="holland-launch-card">
+    <div class="holland-launch-copy">
+      <span class="holland-chip" data-holland-text="chip">60题 · 约20–25分钟</span>
+      <h3 data-holland-text="launchTitle">先看兴趣，再谈专业</h3>
+      <p data-holland-text="launchBody">按“愿不愿意持续做”作答，不看目前会不会，也不考虑职业热度。完成后会得到三字母代码、六边形图、个性化解析和专业建议。</p>
+      <div class="holland-launch-actions">
+        <button class="primary-btn" data-holland-open type="button"><span data-holland-text="start">开始测评</span><b>→</b></button>
+        <button class="ghost-btn holland-history-entry" data-holland-history type="button"><span data-holland-text="history">测评记录</span><b class="history-count-badge" data-holland-history-count hidden></b></button>
+        <small data-holland-text="boundary">用于探索与讨论，不替代成绩、课程要求和真实体验。</small>
+      </div>
+    </div>
+    <div class="holland-preview" aria-hidden="true">
+      <svg viewBox="0 0 420 360">
+        <polygon class="holland-preview-grid grid-1" points="210,38 343,115 343,269 210,346 77,269 77,115"></polygon>
+        <polygon class="holland-preview-grid grid-2" points="210,86 301,139 301,245 210,298 119,245 119,139"></polygon>
+        <polygon class="holland-preview-shape" points="210,64 315,131 283,235 210,318 105,253 91,123"></polygon>
+        <text x="210" y="25">I</text><text x="360" y="112">A</text><text x="365" y="282">S</text><text x="210" y="358">E</text><text x="48" y="282">C</text><text x="48" y="112">R</text>
+      </svg>
+      <div class="holland-preview-code"><span>RIASEC</span><strong>YOUR CODE</strong><small>INTEREST × MAJOR</small></div>
+    </div>
+  </div>
+  <div class="holland-type-strip">
+    <span><b>R</b><em data-holland-text="typeR">现实型</em></span><span><b>I</b><em data-holland-text="typeI">研究型</em></span><span><b>A</b><em data-holland-text="typeA">艺术型</em></span><span><b>S</b><em data-holland-text="typeS">社会型</em></span><span><b>E</b><em data-holland-text="typeE">企业型</em></span><span><b>C</b><em data-holland-text="typeC">常规型</em></span>
   </div>
 </section>
 <section aria-labelledby="matcherTitle" class="matcher-section" id="matcher">
@@ -125,7 +157,9 @@
 <a href="https://www.undergraduate.study.cam.ac.uk/apply/before/choosing-high-school-subjects" rel="noreferrer" target="_blank"><span>CAMBRIDGE</span><strong>Choosing A-level Subjects</strong><small>Required, useful and less helpful subject choices</small></a>
 <a href="https://www.undergraduate.study.cam.ac.uk/apply/before/improve-application" rel="noreferrer" target="_blank"><span>CAMBRIDGE</span><strong>Super-curricular Preparation</strong><small>Reading, lectures, projects and reflection</small></a>
 <a href="https://www.ox.ac.uk/admissions/undergraduate/supercurricular-hub" rel="noreferrer" target="_blank"><span>OXFORD</span><strong>Supercurricular Hub</strong><small>Books, podcasts, challenges and subject resources</small></a>
+<a href="https://www.onetcenter.org/IP.html" rel="noreferrer" target="_blank"><span>O*NET®</span><strong>Interest Profiler</strong><small>RIASEC framework, scoring and career exploration</small></a>
 </div>
+<div class="holland-source-note"><strong>职业兴趣测评说明</strong><p>网站中的60道题依据RIASEC六类结构，结合中国国际高中学习与项目情境重新编写。该版本尚未建立本土常模，用于生涯探索和升学访谈，不用于招生筛选、心理诊断或高风险决策。</p><small>This page includes information informed by the O*NET Career Exploration Tools by USDOL/ETA. XFCC has modified and localized the material; USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA.</small></div>
 <div class="disclaimer"><strong data-i18n="disclaimerTitle">重要说明</strong><p data-i18n="disclaimer1"></p><p data-i18n="disclaimer2"></p></div>
 </section>
 </main>
@@ -143,13 +177,18 @@
     <span class="zh-only">返回顶部</span><span class="en-only">Back to top</span>
   </a>
 </footer>
+<dialog class="holland-dialog" id="hollandDialog">
+  <button aria-label="Close" class="dialog-close holland-dialog-close" data-holland-close type="button">×</button>
+  <div id="hollandApp"></div>
+</dialog>
 <div class="compare-tray" hidden="" id="compareTray"><div><strong data-i18n="compare">专业对比</strong><span id="compareNames"></span></div><button class="text-btn" data-i18n="clear" id="clearCompare">清空</button><button class="primary-btn small" data-i18n="startCompare" disabled="" id="openCompare">开始对比</button></div>
 <dialog class="major-dialog" id="majorDialog"><button aria-label="Close" class="dialog-close" data-close="">×</button><div id="dialogContent"></div></dialog>
 <dialog class="compare-dialog" id="compareDialog"><button aria-label="Close" class="dialog-close" data-close="">×</button><div id="compareContent"></div></dialog>
 
 
 
-<script src="app.js?v=3.8.3"></script>
-<script src="matcher.js?v=3.8.3"></script>
-<div id="buildVersion" style="position:fixed;right:10px;bottom:8px;z-index:9999;font:600 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;opacity:.38;pointer-events:none">BUILD 3.8.3</div>
+<script src="app.js?v=4.2"></script>
+<script src="matcher.js?v=4.2"></script>
+<script src="holland.js?v=4.2"></script>
+<div id="buildVersion" style="position:fixed;right:10px;bottom:8px;z-index:9999;font:600 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;opacity:.38;pointer-events:none">BUILD 4.2</div>
 </body></html>
