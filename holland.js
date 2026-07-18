@@ -135,7 +135,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     return `<section class="holland-question-screen"><button class="subpage-back holland-stage-back" data-holland-stage-back type="button">← ${tx('back')}</button>
       <header class="holland-question-head"><div><p>${tx('progress')}</p><h2>${tx('page',{x:state.page+1})}</h2></div><div class="holland-progress-copy"><strong>${tx('answered',{x:answeredCount()})}</strong><div><i style="width:${answeredCount()/60*100}%"></i></div></div></header>
       <div class="holland-scale"><span>0 · ${tx('scale0')}</span><span>1 · ${tx('scale1')}</span><span>2 · ${tx('scale2')}</span><span>3 · ${tx('scale3')}</span><span>4 · ${tx('scale4')}</span></div>
-      <div class="holland-question-list">${items.map(q=>`<article class="holland-question-card ${state.answers[q.id-1]!==null?'answered':''}"><div class="holland-question-copy"><span>${String(q.id).padStart(2,'0')}</span><p>${esc(q[lang()])}</p></div><div class="holland-answer-row">${[0,1,2,3,4].map(v=>`<button type="button" data-holland-answer="${q.id}:${v}" class="${state.answers[q.id-1]===v?'active':''}" aria-label="${v}"><b>${v}</b><small>${tx('scale'+v)}</small></button>`).join('')}</div></article>`).join('')}</div>
+      <div class="holland-question-list">${items.map(q=>`<article class="holland-question-card ${state.answers[q.id-1]!==null?'answered':''}"><div class="holland-question-copy"><span>${String(q.id).padStart(2,'0')}</span><p>${esc(q[lang()])}</p></div><div class="holland-answer-row">${[0,1,2,3,4].map(v=>`<button type="button" data-holland-answer="${q.id}:${v}" class="${state.answers[q.id-1]===v?'active':''}" aria-label="${v}" aria-pressed="${state.answers[q.id-1]===v?'true':'false'}"><b>${v}</b><small>${tx('scale'+v)}</small></button>`).join('')}</div></article>`).join('')}</div>
       <footer class="holland-question-actions"><button class="ghost-btn" data-holland-prev type="button" ${state.page===0?'disabled':''}>← ${tx('previous')}</button><span class="holland-page-dots">${Array.from({length:6},(_,i)=>`<i class="${i===state.page?'active':i<state.page?'done':''}"></i>`).join('')}</span><button class="primary-btn" data-holland-next type="button" ${complete?'':'disabled'}>${state.page===5?tx('submit'):tx('next')} →</button></footer>
       <div class="holland-inline-alert" hidden>${tx('needAnswer')}</div></section>`;
   }
@@ -216,6 +216,24 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     try{if(document.fonts?.ready)await Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,700))]);const blob=buildPdf(buildReportCanvases(record));const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`${lang()==='en'?'Holland_Interest_Report':'霍兰德职业兴趣测评报告'}_${record.result.code}_${formatDate(record.createdAt,true).replace(/[\s/年月日,.]/g,'-')}.pdf`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);}catch(err){console.error(err);alert(tx('exportFailed'));}finally{if(button){button.disabled=false;button.textContent=original;}}
   }
 
+  function updateQuestionAnswerUI(id,val){
+    const buttons=app.querySelectorAll(`[data-holland-answer^="${id}:"]`);
+    buttons.forEach(button=>{
+      const selected=Number(button.dataset.hollandAnswer.split(':')[1])===val;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-pressed',String(selected));
+    });
+    buttons[0]?.closest('.holland-question-card')?.classList.add('answered');
+    const count=answeredCount();
+    const progressText=app.querySelector('.holland-progress-copy strong');
+    const progressBar=app.querySelector('.holland-progress-copy i');
+    if(progressText)progressText.textContent=tx('answered',{x:count});
+    if(progressBar)progressBar.style.width=`${count/60*100}%`;
+    const start=state.page*10;
+    const nextButton=app.querySelector('[data-holland-next]');
+    if(nextButton)nextButton.disabled=state.answers.slice(start,start+10).some(x=>x===null);
+  }
+
   function render(){syncStatic();app.innerHTML=state.stage==='intro'?intro():state.stage==='questions'?questionPage():resultScreen();dialog.scrollTop=0;if(historyFocus&&state.stage==='intro'){historyFocus=false;setTimeout(()=>app.querySelector('#hollandHistory')?.scrollIntoView({behavior:'smooth',block:'start'}),60);}}
 
   document.querySelectorAll('[data-holland-open]').forEach(el=>el.addEventListener('click',()=>open()));
@@ -226,7 +244,7 @@ const hollandText = {"zh": {"nav": "兴趣测评", "heroCta": "做职业兴趣�
     if(e.target.closest('[data-holland-history-jump]')){app.querySelector('#hollandHistory')?.scrollIntoView({behavior:'smooth',block:'start'});return;}
     if(e.target.closest('[data-holland-begin]')){const saved=loadProgress();if(saved&&saved.answers.some(x=>x!==null)){state.answers=saved.answers;state.page=saved.page||0;}else{state.answers=Array(60).fill(null);state.page=0;}state.stage='questions';saveProgress();render();return;}
     if(e.target.closest('[data-holland-reset]')){resetCurrent(false);return;}
-    const ans=e.target.closest('[data-holland-answer]');if(ans){const [id,val]=ans.dataset.hollandAnswer.split(':').map(Number);state.answers[id-1]=val;saveProgress();render();return;}
+    const ans=e.target.closest('[data-holland-answer]');if(ans){const [id,val]=ans.dataset.hollandAnswer.split(':').map(Number);state.answers[id-1]=val;saveProgress();updateQuestionAnswerUI(id,val);return;}
     if(e.target.closest('[data-holland-prev]')){state.page=Math.max(0,state.page-1);saveProgress();render();return;}
     if(e.target.closest('[data-holland-next]')){const start=state.page*10;if(state.answers.slice(start,start+10).some(x=>x===null)){const alert=app.querySelector('.holland-inline-alert');if(alert){alert.hidden=false;setTimeout(()=>alert.hidden=true,2200);}return;}if(state.page<5){state.page++;saveProgress();render();}else{state.result=score();const record=createRecord(state.result);state.recordId=record.id;state.stage='result';render();}return;}
     const exportBtn=e.target.closest('[data-holland-export]');if(exportBtn){await exportRecord(getRecord(state.recordId)||{id:state.recordId||'CURRENT',createdAt:new Date().toISOString(),answers:[...state.answers],result:state.result},exportBtn);return;}
