@@ -5777,20 +5777,24 @@ const UI = {
     "navExplore": "探索专业",
     "navMethod": "判断方法",
     "navSources": "资料来源",
+    "navAdmissions": "2027申请",
+    "admissionsTitle": "2027英国本科：附加考试速查",
+    "admissionsDesc": "按学校和具体课程核对，避免把推荐测试误当成硬性门槛。以下为精选示例，完整要求请以大学官网为准。",
+    "admissionsNote": "资料复核：2026-10-28。考试与申请要求按入学年份变化；不等于A-Level选课匹配结果，也不适用于所有同名专业。",
     "heroEyebrow": "AI ERA · UNIVERSITY MAJOR & CAREER ATLAS · 2026",
     "heroSubtitle": "AI时代大学专业与职业路径地图",
     "heroLead": "一站查看专业方向、未来岗位、学历要求和A-Level课程匹配，帮助学生更快理清选择。",
     "startExplore": "开始探索",
     "randomMajor": "随机查看一个专业",
     "panelTitle": "FUTURE SIGNALS",
-    "panelDate": "2026.07 · V4.2.1.1",
-    "high": "AI 高危区",
+    "panelDate": "2026.10 · V4.2.2",
+    "high": "AI高暴露区",
     "highDesc": "重复执行、套模板、容易检查",
     "highEx": "基础报表 · 模板化内容 · 常规制图",
-    "border": "AI 骑线区",
+    "border": "AI转型区",
     "borderDesc": "AI能做一部分，人仍需判断和落地",
     "borderEx": "常规分析 · 一般开发 · 标准咨询",
-    "safe": "AI 安全区",
+    "safe": "AI低替代区",
     "safeDesc": "依赖现场、责任、信任或原创研究",
     "safeEx": "临床 · 核心研发 · 复杂工程 · 谈判",
     "majors": "主流专业",
@@ -5802,14 +5806,14 @@ const UI = {
     "exploreDesc": "一张卡片先看差异，点开后再看完整方向、岗位与学历路径。",
     "searchPlaceholder": "搜索专业、方向或岗位…",
     "sortDefault": "默认排序",
-    "sortRiskDesc": "基础岗位受影响：大 → 小",
-    "sortRiskAsc": "基础岗位受影响：小 → 大",
+    "sortRiskDesc": "站内任务暴露判断：高 → 低",
+    "sortRiskAsc": "站内任务暴露判断：低 → 高",
     "sortName": "按名称",
     "all": "全部",
-    "legendHigh": "高危：基础岗位最容易减少",
-    "legendBorder": "骑线：做得浅容易被替代",
-    "legendSafe": "安全：更依赖判断、现场或责任",
-    "legendNote": "风险落在具体方向和岗位上，专业名称本身说明不了全部。",
+    "legendHigh": "高暴露：较多标准化任务可能被AI改变",
+    "legendBorder": "转型：AI辅助程度高，仍需人的判断",
+    "legendSafe": "低替代：更依赖现场、责任与信任",
+    "legendNote": "展示的是任务暴露度的定性判断，不代表岗位消失概率或就业人数预测。",
     "noMatch": "没有匹配的专业",
     "noMatchSub": "试试更短的关键词或切换专业类别。",
     "methodEye": "HOW TO READ THE MAP",
@@ -5845,10 +5849,10 @@ const UI = {
     "s4p": "临床、科研、核心研发和部分高端咨询往往需要硕士或博士；对执行型岗位，单纯增加学历不一定解决就业问题。",
     "sourcesEye": "EVIDENCE BASE",
     "sourcesTitle": "资料来源与使用边界",
-    "sourcesDesc": "AI风险判断参考国际研究；岗位名称和学历要求参考英美官方职业资料，并结合专业培养路径整理。",
+    "sourcesDesc": "AI任务暴露度参考ILO等国际研究；岗位路径参考英美官方职业资料。O*NET 31.0已列为2026年数据核验基准，但网站尚未逐岗完成重映射。",
     "disclaimerTitle": "重要说明",
-    "disclaimer1": "本网站提供专业规划参考，不涉及就业保证、薪资预测或专业排名。“常见入门学历”表示多数岗位的典型起点；临床心理、药学、医学物理、工程签字等岗位，请以目标国家或地区的注册与执照要求为准。",
-    "disclaimer2": "研究整理日期：2026年7月14日。建议每 6–12 个月复核一次。",
+    "disclaimer1": "AI任务暴露分区与站内风险分值均为探索性定性判断，并非自动化概率、失业预测或官方职业排名。本网站提供专业规划参考，不涉及就业保证、薪资预测或专业排名。“常见入门学历”表示多数岗位的典型起点；临床心理、药学、医学物理、工程签字等岗位，请以目标国家或地区的注册与执照要求为准。",
+    "disclaimer2": "资料与申请规则复核至2026年10月28日；岗位职责、学历和专业匹配仍属于本网站整理性判断，尚未按O*NET 31.0逐岗校准。建议每6–12个月复核。",
     "footerText": "星海实验高级中学融致国际课程项目 · College Counseling 学生专业选择系统",
     "backTop": "返回顶部 ↑",
     "compare": "专业对比",
@@ -5865,20 +5869,20 @@ const UI = {
     "coreLabel": "核心岗位",
     "openAll": "查看全部 9 个方向与岗位 →",
     "addCompare": "加入对比",
-    "impactHigh": "基础岗位受影响较大",
-    "impactSplit": "要看具体方向",
-    "impactMid": "部分基础工作会减少",
-    "impactStable": "整体相对稳定",
+    "impactHigh": "标准化任务暴露较高",
+    "impactSplit": "不同方向差异明显",
+    "impactMid": "部分常规任务易受影响",
+    "impactStable": "相对低替代（不等于安全）",
     "impactHighShort": "影响较大",
     "impactSplitShort": "方向分化明显",
     "impactMidShort": "中等影响",
     "impactStableShort": "相对稳定",
     "detailMeta": "方向 / 岗位 / 学历版",
-    "detailStatus": "本页包含高危、骑线和相对安全三类方向。",
+    "detailStatus": "本页九个方向按任务特征分组，不能据此预测岗位减少。",
     "killLine": "AI影响最明显的工作特征",
-    "zoneHighTag": "这些方向里的基础岗位最容易减少",
-    "zoneBorderTag": "只会基础执行比较危险，能做复杂判断仍有机会",
-    "zoneSafeTag": "更依赖专业判断、真人互动、现场经验或责任",
+    "zoneHighTag": "标准化任务暴露较高；具体岗位结果因机构与行业而异",
+    "zoneBorderTag": "部分任务可自动化，场景判断和交付仍重要",
+    "zoneSafeTag": "更多依赖专业判断、现场和责任，但并非绝对安全",
     "possibleJobs": "可能对应的岗位",
     "whyHere": "为什么放在这里",
     "entryDegree": "通常从什么学历起步",
@@ -5907,20 +5911,24 @@ const UI = {
     "navExplore": "Explore",
     "navMethod": "How it works",
     "navSources": "Sources",
+    "navAdmissions": "2027 entry",
+    "admissionsTitle": "2027 UK undergraduate admissions tests",
+    "admissionsDesc": "Check each university and exact course. Recommended tests are not always compulsory; these are selected examples, not a complete list.",
+    "admissionsNote": "Reviewed 28 Oct 2026. Entry tests vary by intake and course; the list does not replace university advice or A-level requirements.",
     "heroEyebrow": "AI ERA · UNIVERSITY MAJOR & CAREER ATLAS · 2026",
     "heroSubtitle": "A university major and career atlas for the AI era",
     "heroLead": "Explore subject fit, specialist pathways, future roles and education requirements in one place.",
     "startExplore": "Explore the atlas",
     "randomMajor": "Surprise me",
     "panelTitle": "FUTURE SIGNALS",
-    "panelDate": "2026.07 · V4.2.1.1",
+    "panelDate": "2026.10 · V4.2.2",
     "high": "High-exposure zone",
     "highDesc": "Repeatable, template-led and easy to review",
     "highEx": "Routine reporting · template content · basic drafting",
-    "border": "Transition zone",
+    "border": "AI transformation zone",
     "borderDesc": "AI handles part of the work; people still judge and deliver",
     "borderEx": "Applied analysis · general development · standard consulting",
-    "safe": "More resilient zone",
+    "safe": "Lower substitution zone",
     "safeDesc": "Relies on fieldwork, accountability, trust or original research",
     "safeEx": "Clinical work · core R&D · complex engineering · negotiation",
     "majors": "major fields",
@@ -5932,14 +5940,14 @@ const UI = {
     "exploreDesc": "Scan the difference on each card, then open the full track, role and education map.",
     "searchPlaceholder": "Search majors, tracks or roles…",
     "sortDefault": "Default order",
-    "sortRiskDesc": "Entry-level impact: high → low",
-    "sortRiskAsc": "Entry-level impact: low → high",
+    "sortRiskDesc": "Site exposure judgement: high → low",
+    "sortRiskAsc": "Site exposure judgement: low → high",
     "sortName": "By name",
     "all": "All",
-    "legendHigh": "High exposure: entry-level roles may shrink fastest",
-    "legendBorder": "Transition: shallow execution is vulnerable",
-    "legendSafe": "More resilient: judgement, fieldwork or accountability matter more",
-    "legendNote": "The map evaluates specific tracks and roles—not whether an entire major is “good” or “bad”.",
+    "legendHigh": "Higher exposure: routine tasks may change",
+    "legendBorder": "Transformation: AI assists while people judge",
+    "legendSafe": "Lower substitution: more fieldwork and accountability",
+    "legendNote": "These are qualitative task-exposure judgements, not probabilities of job loss or employment forecasts.",
     "noMatch": "No matching major",
     "noMatchSub": "Try a shorter keyword or another category.",
     "methodEye": "HOW TO READ THE MAP",
@@ -5975,10 +5983,10 @@ const UI = {
     "s4p": "Clinical practice, research, core R&D and some advanced consulting often reward a master’s or doctorate. For routine execution roles, another degree alone may not solve the employment problem.",
     "sourcesEye": "EVIDENCE BASE",
     "sourcesTitle": "Sources and limits",
-    "sourcesDesc": "AI exposure draws on international research. Role titles and education pathways draw on official UK and US career resources and typical university curricula.",
+    "sourcesDesc": "AI task-exposure guidance draws on international research. O*NET 31.0 is a reference for planned occupation-level validation, not a completed re-mapping of every site role.",
     "disclaimerTitle": "Important note",
-    "disclaimer1": "This site is not an employment guarantee, salary forecast or ranking. “Typical entry education” describes a common route, not a universal rule. Clinical psychology, pharmacy, medical physics and licensed engineering roles must follow local registration and licensing requirements.",
-    "disclaimer2": "Research compiled 14 July 2026. Review every 6–12 months.",
+    "disclaimer1": "AI task-exposure groups and site scores are exploratory qualitative judgements, not automation probabilities, job-loss forecasts or official rankings. This site is not an employment guarantee, salary forecast or ranking. “Typical entry education” describes a common route, not a universal rule. Clinical psychology, pharmacy, medical physics and licensed engineering roles must follow local registration and licensing requirements.",
+    "disclaimer2": "Sources and admissions reviewed 28 October 2026; site-level role and education guidance has not yet been mapped occupation-by-occupation to O*NET 31.0. Review every 6–12 months.",
     "footerText": "Xinghai FusionVision Curriculum Center · College Counseling Major Choice System",
     "backTop": "Back to top ↑",
     "compare": "Compare majors",
@@ -5995,20 +6003,20 @@ const UI = {
     "coreLabel": "Core roles",
     "openAll": "View all 9 tracks and roles →",
     "addCompare": "Add to comparison",
-    "impactHigh": "Entry-level roles face substantial pressure",
+    "impactHigh": "Higher exposure of routine tasks",
     "impactSplit": "Outcomes vary sharply by track",
-    "impactMid": "Some routine work is likely to shrink",
-    "impactStable": "Overall relatively resilient",
+    "impactMid": "Some routine tasks face AI-driven change",
+    "impactStable": "Lower task substitution (not AI-proof)",
     "impactHighShort": "Higher exposure",
     "impactSplitShort": "Track-dependent",
     "impactMidShort": "Moderate exposure",
     "impactStableShort": "More resilient",
     "detailMeta": "Tracks / Roles / Education",
-    "detailStatus": "The page below shows three exposed, three transitional and three more resilient tracks.",
+    "detailStatus": "Nine tracks are grouped by task characteristics; these are not job-loss predictions.",
     "killLine": "Where the replacement pressure is strongest",
-    "zoneHighTag": "Entry-level roles in these tracks are most likely to shrink",
-    "zoneBorderTag": "Routine execution is vulnerable; deeper judgement still matters",
-    "zoneSafeTag": "These tracks rely more on specialist judgement, people, physical settings or accountability",
+    "zoneHighTag": "Routine tasks face higher exposure; outcomes vary by employer and context",
+    "zoneBorderTag": "Some tasks may be automated; contextual judgement still matters",
+    "zoneSafeTag": "These tracks rely more on judgement, physical settings or accountability; none is AI-proof",
     "possibleJobs": "Representative roles",
     "whyHere": "Why it sits here",
     "entryDegree": "Typical entry education",
@@ -6104,7 +6112,7 @@ function searchable(m){
 }
 function applyStaticI18n(){
  document.documentElement.lang=isEn()?"en":"zh-CN";
- document.title=isEn()?"MAJOR FUTURES | AI-era Major & Career Atlas V4.2.1.1":"MAJOR FUTURES｜星海融致专业选择系统 V4.2.1.1";
+ document.title=isEn()?"MAJOR FUTURES | AI-era Major & Career Atlas V4.2.2":"MAJOR FUTURES｜星海融致专业选择系统 V4.2.2";
  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.dataset.i18n);});
  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=t(el.dataset.i18nPlaceholder);});
  document.querySelectorAll("[data-lang]").forEach(btn=>btn.classList.toggle("active",btn.dataset.lang===currentLang));
@@ -6130,7 +6138,48 @@ function chips(items){return`<div class="job-chips">${items.map(x=>`<span>${x}</
 function zone(title,tag,items,cls){return`<article class="zone ${cls}"><div class="zone-head"><h3>${title}</h3><span>${tag}</span></div><div class="direction-list">${items.map(x=>`<section class="direction-item"><h4>${direction(x)}</h4><div class="direction-line"><b>${t("possibleJobs")}</b>${chips(jobs(x))}</div><p class="direction-reason"><b>${t("whyHere")}</b>${why(x)}</p><div class="degree-inline"><span><b>${t("entryDegree")}</b>${entry(x)}</span><span><b>${t("advancedDegree")}</b>${preferred(x)}</span></div></section>`).join("")}</div></article>`;}
 function educationRows(m){const groups=[[t("high"),m.high,"high"],[t("border"),m.border,"edge"],[t("safe"),m.safe,"safe"]];return groups.flatMap(([label,items,cls])=>items.map(x=>`<tr><td><span class="zone-pill ${cls}">${label}</span></td><td><strong>${direction(x)}</strong></td><td>${jobs(x).join(isEn()?", ":"、")}</td><td>${entry(x)}</td><td>${preferred(x)}</td></tr>`)).join("");}
 function thresholdEn(m){const d=m.high.map(x=>direction(x)).join(", ");return`Replacement pressure is strongest when work in ${m.en} is screen-based, standardised and easy to review—especially in areas such as ${d}.`;}
-function openMajor(id,matchSection=""){const m=majors.find(x=>x.id===id),b=band(m.risk),color=categoryColors[m.category];document.querySelector("#dialogContent").innerHTML=`<section class="detail-hero" style="--detail:${color}"><div class="detail-meta">${catName(m.category)} · V4.2.1.1 · ${t("detailMeta")}</div><div class="detail-title-row"><div><h2>${majorName(m)}</h2><p>${isEn()?m.name:m.en}</p></div></div><div class="detail-status"><span class="impact-badge" style="--accent:${b.color}">${t("overall")}${colon()}${b.label}</span><span>${t("detailStatus")}</span></div><p class="detail-overview">${overview(m)}</p></section>${matchSection}<div class="kill-line"><strong>${t("killLine")}</strong><p>${isEn()?thresholdEn(m):m.threshold}</p></div><div class="detail-body"><div class="zone-stack">${zone(t("high"),t("zoneHighTag"),m.high,"high")}${zone(t("border"),t("zoneBorderTag"),m.border,"edge")}${zone(t("safe"),t("zoneSafeTag"),m.safe,"safe")}</div><section class="detail-section"><h3>${t("eduTitle")}</h3><p class="section-note">${t("eduNote")}</p><div class="education-scroll"><table class="education-table"><thead><tr><th>${t("colZone")}</th><th>${t("colDirection")}</th><th>${t("colJobs")}</th><th>${t("colEntry")}</th><th>${t("colAdvanced")}</th></tr></thead><tbody>${educationRows(m)}</tbody></table></div></section><section class="detail-section advice-section"><h3>${t("adviceTitle")}</h3><ul class="advice-list">${advice(m).map(x=>`<li>${x}</li>`).join("")}</ul></section></div>`;majorDialog.style.setProperty("--detail",color);majorDialog.showModal();}
+
+// Admissions data: verified programme-level requirements for the 2027 entry cycle.
+// These records are course examples related to a site major, NOT entry requirements for all UK degrees.
+const ADMISSIONS_2027 = {
+  cs:[
+    {uni:'Oxford',course:'Computer Science',test:'TMUA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'},
+    {uni:'UCL',course:'Computer Science BSc/MEng',test:'TARA',status:'required',url:'https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews'}],
+  mech:[
+    {uni:'Oxford',course:'Engineering Science',test:'ESAT',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'},
+    {uni:'UCL',course:'Mechanical Engineering BEng/MEng',test:'TARA',status:'required',url:'https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews'}],
+  eee:[
+    {uni:'Oxford',course:'Engineering Science',test:'ESAT',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'},
+    {uni:'UCL',course:'Electronic and Electrical Engineering BEng/MEng',test:'ESAT',status:'required',url:'https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews'}],
+  ai:[{uni:'UCL',course:'Robotics and Artificial Intelligence MEng',test:'TARA',status:'required',url:'https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews'}],
+  physics:[{uni:'Oxford',course:'Physics / Physics and Philosophy',test:'ESAT',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'}],
+  math:[
+    {uni:'Oxford',course:'Mathematics / Mathematics and Statistics',test:'TMUA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'},
+    {uni:'LSE',course:'BSc Mathematics and Economics; BSc Mathematics with Data Science (examples)',test:'TMUA',status:'recommended',url:'https://www.lse.ac.uk/study-at-lse/Undergraduate/Prospective-Students/How-to-Apply/Admissions-Information'}],
+  econ:[
+    {uni:'Oxford',course:'Economics and Management',test:'TARA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'},
+    {uni:'UCL',course:'Economics BSc',test:'TMUA',status:'required',url:'https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews'},
+    {uni:'LSE',course:'BSc Economics; BSc Econometrics and Mathematical Economics',test:'TMUA',status:'required',url:'https://www.lse.ac.uk/study-at-lse/Undergraduate/Prospective-Students/How-to-Apply/Admissions-Information'}],
+  ds:[{uni:'LSE',course:'BSc Data Science; BSc Economics and Data Science',test:'TMUA',status:'recommended',url:'https://www.lse.ac.uk/study-at-lse/Undergraduate/Prospective-Students/How-to-Apply/Admissions-Information'}],
+  psych:[{uni:'Oxford',course:'Experimental Psychology',test:'TARA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'}],
+  soc:[{uni:'Oxford',course:'Philosophy, Politics and Economics (PPE); Human Sciences',test:'TARA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'}],
+  mgmt:[{uni:'Oxford',course:'Economics and Management',test:'TARA',status:'required',url:'https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests'}]
+};
+function admissionsHtml(m){
+  const list=ADMISSIONS_2027[m.id];
+  if(!list||!list.length)return '';
+  const en=isEn();
+  const head=en?'2027 entry · Selected UK course tests':'2027入学 · 英国大学部分课程附加测试';
+  const note=en?'These are university-course requirements, not universal rules for this major. Oxford October 2026 testing/booking has ended. Confirm dates and eligibility on official pages.':'仅展示与本专业相关的特定大学课程，不代表此专业在所有大学的要求。牛津2027入学常规2026年10月考期及订考已结束，请以各校官网核对具体适用情况。';
+  return `<section class="detail-section admissions-detail"><h3>${head}</h3><p class="section-note">${note}</p><div class="admissions-programmes">${list.map(x=>`<div class="admissions-programme"><span class="uni">${x.uni}</span><strong>${x.course}</strong><span class="test">${x.test} · ${x.status==='required'?(en?'Required':'必须参加'):(en?'Recommended':'推荐参加（非强制）')}</span><a href="${x.url}" target="_blank" rel="noopener noreferrer">${en?'Official requirements ↗':'核对官方要求 ↗'}</a></div>`).join('')}</div></section>`;
+}
+function careerStageHtml(m){
+  const en=isEn();
+  const card=(label,track,copy)=>`<div class="career-stage-card"><strong>${label}</strong><small>${direction(track)}</small><p>${copy}</p></div>`;
+  return `<section class="detail-section career-stages"><h3>${en?'Career stages · Task-level lens':'职业成长阶段 · AI任务变化观察'}</h3><p class="section-note">${en?'Illustrative preparation questions, using three existing track examples; NOT empirically validated risk scores by seniority.':'根据现有三个专业方向展示不同阶段值得关注的任务，不是按资历测量出的真实风险分值。高级岗位也可能高度受AI影响。'}</p><div class="career-stage-grid">${card(en?'Early career':'入门阶段',m.high[0],en?'Which repeatable tasks can AI draft, classify or check? Learn to verify outputs and build domain knowledge.':'识别可以批量生成、分类或检查的任务；练习核验AI输出并补足领域基础。')}${card(en?'Developing practitioner':'进阶阶段',m.border[0],en?'Where do context, coordination, testing and independent delivery matter?':'哪些工作需要结合具体场景、跨团队协作、测试与独立交付？')}${card(en?'Specialist / research':'专业或研究阶段',m.safe[0],en?'Where do deep evidence, physical validation, stakeholder trust and responsibility matter?':'哪些复杂问题需要研究证据、现场验证、人际信任与责任承担？')}</div></section>`;
+}
+
+function openMajor(id,matchSection=""){const m=majors.find(x=>x.id===id),b=band(m.risk),color=categoryColors[m.category];document.querySelector("#dialogContent").innerHTML=`<section class="detail-hero" style="--detail:${color}"><div class="detail-meta">${catName(m.category)} · V4.2.2 · ${t("detailMeta")}</div><div class="detail-title-row"><div><h2>${majorName(m)}</h2><p>${isEn()?m.name:m.en}</p></div></div><div class="detail-status"><span class="impact-badge" style="--accent:${b.color}">${t("overall")}${colon()}${b.label}</span><span>${t("detailStatus")}</span></div><p class="detail-overview">${overview(m)}</p></section>${matchSection}<div class="kill-line"><strong>${t("killLine")}</strong><p>${isEn()?thresholdEn(m):m.threshold}</p></div><div class="detail-body"><div class="zone-stack">${zone(t("high"),t("zoneHighTag"),m.high,"high")}${zone(t("border"),t("zoneBorderTag"),m.border,"edge")}${zone(t("safe"),t("zoneSafeTag"),m.safe,"safe")}</div><section class="detail-section"><h3>${t("eduTitle")}</h3><p class="section-note">${t("eduNote")}</p><div class="education-scroll"><table class="education-table"><thead><tr><th>${t("colZone")}</th><th>${t("colDirection")}</th><th>${t("colJobs")}</th><th>${t("colEntry")}</th><th>${t("colAdvanced")}</th></tr></thead><tbody>${educationRows(m)}</tbody></table></div></section>${careerStageHtml(m)}${admissionsHtml(m)}<section class="detail-section advice-section"><h3>${t("adviceTitle")}</h3><ul class="advice-list">${advice(m).map(x=>`<li>${x}</li>`).join("")}</ul></section></div>`;majorDialog.style.setProperty("--detail",color);majorDialog.showModal();}
 function compactItem(x){return`<li><strong>${direction(x)}</strong><small>${jobs(x).slice(0,2).join(isEn()?", ":"、")}${isEn()?" | ":"｜"}${t("entryLabel")}${colon()}${entry(x)}</small></li>`;}
 function renderCompare(){const list=state.compare.map(id=>majors.find(m=>m.id===id)),cols=list.length,row=(label,cells,cls="")=>`<div class="compare-row ${cls}" style="--cols:${cols}"><strong>${label}</strong>${cells.join("")}</div>`;document.querySelector("#compareContent").innerHTML=`<div class="compare-wrap"><h2>${t("compareTitle")}</h2><p class="compare-intro">${t("compareIntro")}</p><div class="compare-table">${row(t("compareMajor"),list.map(m=>`<div>${majorName(m)}<small style="display:block;color:var(--muted)">${isEn()?m.name:m.en}</small></div>`),"compare-head")}${row(t("overall"),list.map(m=>`<div class="compare-cell"><strong style="color:${band(m.risk).color}">${band(m.risk).label}</strong></div>`))}${row(t("compareKill"),list.map(m=>`<div>${isEn()?thresholdEn(m):m.threshold}</div>`))}${row(t("compareHigh"),list.map(m=>`<div class="compare-cell"><ul class="compare-directions">${m.high.map(compactItem).join("")}</ul></div>`))}${row(t("compareSafe"),list.map(m=>`<div class="compare-cell"><ul class="compare-directions">${m.safe.map(compactItem).join("")}</ul></div>`))}${row(t("compareDevelop"),list.map(m=>`<div class="compare-cell"><ul>${m.safe.map(x=>`<li><strong>${direction(x)}</strong>${colon()}${preferred(x)}</li>`).join("")}</ul></div>`))}${row(t("compareAdvice"),list.map(m=>`<div>${advice(m)[0]}</div>`))}</div></div>`;compareDialog.showModal();}
 function setLanguage(lang){currentLang=lang;try{localStorage.setItem("lang",lang);}catch(_){}applyStaticI18n();renderFilters();renderCards();updateCompare();if(majorDialog.open)majorDialog.close();if(compareDialog.open)compareDialog.close();}

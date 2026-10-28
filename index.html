@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="AI时代大学专业、职业路径与A-Level课程匹配地图。" name="description"/>
-<title>MAJOR FUTURES｜星海融致专业选择系统 V4.2.1.1</title>
+<title>MAJOR FUTURES｜星海融致专业选择系统 V4.2.2</title>
 
-<link href="styles.css?v=4.2.1.1" rel="stylesheet"/>
+<link href="styles.css?v=4.2.2" rel="stylesheet"/>
 </head>
 <body>
 
@@ -22,6 +22,7 @@
 <a data-match-text="nav" href="#matcher">课程匹配</a>
 <a data-i18n="navExplore" href="#explore">探索专业</a>
 <a data-i18n="navMethod" href="#method">判断方法</a>
+<a data-i18n="navAdmissions" href="#admissions2027">2027申请</a>
 <a data-i18n="navSources" href="#sources">资料来源</a>
 </nav>
 <div class="top-actions">
@@ -52,11 +53,11 @@
 </div>
 <div class="hero-panel future-console">
 <div class="console-grid"></div>
-<div class="panel-top"><span data-i18n="panelTitle">FUTURE SIGNALS</span><span class="live-dot" data-i18n="panelDate">2026.07 · V4.2.1.1</span></div>
+<div class="panel-top"><span data-i18n="panelTitle">FUTURE SIGNALS</span><span class="live-dot" data-i18n="panelDate">2026.10 · V4.2.2</span></div>
 <div class="console-orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="orbit-core">AI</div></div>
-<div class="zone-preview high-preview"><b data-i18n="high">AI 高危区</b><span data-i18n="highDesc">重复执行、套模板、容易检查</span><small data-i18n="highEx">基础报表 · 模板化内容 · 常规制图</small></div>
-<div class="zone-preview edge-preview"><b data-i18n="border">AI 骑线区</b><span data-i18n="borderDesc">AI能做一部分，人仍需判断和落地</span><small data-i18n="borderEx">常规分析 · 一般开发 · 标准咨询</small></div>
-<div class="zone-preview safe-preview"><b data-i18n="safe">AI 安全区</b><span data-i18n="safeDesc">依赖现场、责任、信任或原创研究</span><small data-i18n="safeEx">临床 · 核心研发 · 复杂工程 · 谈判</small></div>
+<div class="zone-preview high-preview"><b data-i18n="high">AI高暴露区</b><span data-i18n="highDesc">重复执行、套模板、容易检查</span><small data-i18n="highEx">基础报表 · 模板化内容 · 常规制图</small></div>
+<div class="zone-preview edge-preview"><b data-i18n="border">AI转型区</b><span data-i18n="borderDesc">AI能做一部分，人仍需判断和落地</span><small data-i18n="borderEx">常规分析 · 一般开发 · 标准咨询</small></div>
+<div class="zone-preview safe-preview"><b data-i18n="safe">AI低替代区</b><span data-i18n="safeDesc">依赖现场、责任、信任或原创研究</span><small data-i18n="safeEx">临床 · 核心研发 · 复杂工程 · 谈判</small></div>
 </div>
 </section>
 <section aria-label="Key figures" class="signal-strip">
@@ -134,7 +135,7 @@
 <div class="section-heading"><div><p class="eyebrow" data-i18n="exploreEye">EXPLORE THE ATLAS</p><h2 data-i18n="exploreTitle">专业图谱：方向、岗位与学历</h2></div><p data-i18n="exploreDesc">一张卡片先看差异，点开后再看完整方向、岗位与学历路径。</p></div>
 <div class="toolbar"><label class="search-box"><span>⌕</span><input autocomplete="off" data-i18n-placeholder="searchPlaceholder" id="searchInput" placeholder="搜索专业、方向或岗位…" type="search"><kbd>/</kbd></input></label><select aria-label="Sort" id="sortSelect"></select></div>
 <div aria-label="Categories" class="filter-row" id="categoryFilters"></div>
-<div class="legend"><span><i class="dot high"></i><b data-i18n="legendHigh">高危：基础岗位最容易减少</b></span><span><i class="dot edge"></i><b data-i18n="legendBorder">骑线：做得浅容易被替代</b></span><span><i class="dot safe"></i><b data-i18n="legendSafe">安全：更依赖判断、现场或责任</b></span><small data-i18n="legendNote">判断的是具体方向和岗位，不是给整个专业贴“好”或“坏”的标签。</small></div>
+<div class="legend"><span><i class="dot high"></i><b data-i18n="legendHigh">高暴露：较多标准化任务可能被AI改变</b></span><span><i class="dot edge"></i><b data-i18n="legendBorder">转型：AI辅助程度高，仍需人的判断</b></span><span><i class="dot safe"></i><b data-i18n="legendSafe">低替代：更依赖现场、责任与信任</b></span><small data-i18n="legendNote">属于任务暴露度定性判断，不等于职业消失概率、就业数量预测。</small></div>
 <div class="major-grid" id="majorGrid"></div><div class="empty-state" hidden="" id="emptyState"><strong data-i18n="noMatch">没有匹配的专业</strong><span data-i18n="noMatchSub">试试更短的关键词或切换专业类别。</span></div>
 </section>
 <section class="method-section" id="method">
@@ -143,9 +144,19 @@
 <div class="method-cards"><article><b>01</b><h3 data-i18n="m1t"></h3><p data-i18n="m1p"></p></article><article><b>02</b><h3 data-i18n="m2t"></h3><p data-i18n="m2p"></p></article><article><b>03</b><h3 data-i18n="m3t"></h3><p data-i18n="m3p"></p></article><article><b>04</b><h3 data-i18n="m4t"></h3><p data-i18n="m4p"></p></article><article><b>05</b><h3 data-i18n="m5t"></h3><p data-i18n="m5p"></p></article><article><b>06</b><h3 data-i18n="m6t"></h3><p data-i18n="m6p"></p></article></div></div>
 <div class="principle-banner"><span data-i18n="principleSmall">没有绝对安全的方向。</span><strong data-i18n="principleMain">让AI负责提速，把判断、沟通与责任留在人手里。</strong></div>
 </section>
+<section class="admissions-section" id="admissions2027" aria-labelledby="admissions2027Title"><div class="section-heading"><div><p class="eyebrow">2027 ENTRY · VERIFIED ADMISSIONS</p><h2 id="admissions2027Title" data-i18n="admissionsTitle">2027英国本科：附加考试速查</h2></div><p data-i18n="admissionsDesc">按学校和具体课程核对，避免把推荐测试误当成硬性门槛。以下为精选示例，完整要求请以大学官网为准。</p></div><div class="admissions-overview-grid">
+<article><span>OXFORD · 2027</span><h3>ESAT / TMUA / TARA</h3><p class="zh-only">计算机、数学等采用TMUA；工程、物理等采用ESAT；经济管理、PPE、实验心理学等采用TARA。常规本科2026年10月考试已结束。</p><p class="en-only">TMUA for Computing/Mathematics; ESAT for Engineering/Physics; TARA for Economics &amp; Management/PPE/Experimental Psychology. October 2026 sitting has passed for standard entry.</p><a href="https://www.ox.ac.uk/admissions/undergraduate/applying/guide-for-applicants/admissions-tests" target="_blank" rel="noopener noreferrer">Oxford official ↗</a></article>
+<article><span>UCL · 2027</span><h3>ESAT / TMUA / TARA</h3><p class="zh-only">电子电气工程：ESAT；经济学：TMUA；计算机及机器人AI、机械工程：TARA（机械工程2027新增）。</p><p class="en-only">EEE: ESAT; Economics: TMUA; Computing, Robotics &amp; AI and Mechanical Engineering: TARA (new for Mechanical Engineering).</p><a href="https://www.ucl.ac.uk/study/prospective-students/school-teachers-and-counsellors/tests-tasks-and-interviews" target="_blank" rel="noopener noreferrer">UCL official ↗</a></article>
+<article><span>LSE · 2027</span><h3>TMUA · Required vs Recommended</h3><p class="zh-only">经济学和计量经济学与数理经济学：必考；数据科学、精算、部分数学与经济交叉课程：推荐但非强制。</p><p class="en-only">Economics and Econometrics &amp; Mathematical Economics: required. Data Science, Actuarial Science and selected mathematics/economics degrees: recommended, not mandatory.</p><a href="https://www.lse.ac.uk/study-at-lse/Undergraduate/Prospective-Students/How-to-Apply/Admissions-Information" target="_blank" rel="noopener noreferrer">LSE official ↗</a></article>
+</div><p class="admissions-general-note" data-i18n="admissionsNote">资料复核：2026-10-28。考试与申请要求按入学年份变化；不等于A-Level选课匹配结果，也不适用于所有同名专业。</p></section>
 <section class="strategy-section"><div class="section-heading"><div><p class="eyebrow" data-i18n="strategyEye">APPLICATION STRATEGY</p><h2 data-i18n="strategyTitle">把申请优势，做在课程之外</h2></div></div><div class="strategy-grid"><article><span>01</span><h3 data-i18n="s1t"></h3><p data-i18n="s1p"></p></article><article><span>02</span><h3 data-i18n="s2t"></h3><p data-i18n="s2p"></p></article><article><span>03</span><h3 data-i18n="s3t"></h3><p data-i18n="s3p"></p></article><article><span>04</span><h3 data-i18n="s4t"></h3><p data-i18n="s4p"></p></article></div></section>
 <section class="sources-section" id="sources"><div class="section-heading"><div><p class="eyebrow" data-i18n="sourcesEye">EVIDENCE BASE</p><h2 data-i18n="sourcesTitle">资料来源与使用边界</h2></div><p data-i18n="sourcesDesc">AI风险判断参考国际研究；岗位名称和学历要求参考英美官方职业资料，并结合专业培养路径整理。</p></div>
 <div class="sources-grid">
+<a href="https://www.ilo.org/publications/workers%E2%80%99-exposure-ai-what-indicators-tell-us-%E2%80%93-and-what-they-don%E2%80%99t" rel="noreferrer" target="_blank"><span>ILO · 2026</span><strong>Workers' Exposure to AI</strong><small>Task exposure is not a job-loss forecast</small></a>
+<a href="https://www.ilo.org/publications/impact-genai-jobs-productivity-and-work-organization-review-empirical" rel="noreferrer" target="_blank"><span>ILO · 2026</span><strong>GenAI Jobs &amp; Work Evidence</strong><small>Empirical evidence on job transformation</small></a>
+<a href="https://www.ilo.org/publications/changing-landscape-skills-age-ai" rel="noreferrer" target="_blank"><span>ILO · AUG 2026</span><strong>Changing Landscape of Skills</strong><small>Higher-order thinking, social and digital skills</small></a>
+<a href="https://www.weforum.org/publications/artificial-intelligence-and-the-future-of-entry-level-work-a-framework-for-safeguarding-and-reinventing-early-career-pathways/" rel="noreferrer" target="_blank"><span>WEF · 2026</span><strong>AI &amp; Entry-level Work</strong><small>Early-career task change and opportunities</small></a>
+<a href="https://www.onetcenter.org/db_releases.html" rel="noreferrer" target="_blank"><span>O*NET · 31.0</span><strong>Occupational Database</strong><small>Aug 2026 source version; role mapping pending</small></a>
 <a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update" rel="noreferrer" target="_blank"><span>ILO · 2025</span><strong>Generative AI and Jobs</strong><small>Occupational exposure and job transformation</small></a>
 <a href="https://www.oecd.org/en/publications/2026/05/the-oecd-ai-exposure-measure_489cfd42.html" rel="noreferrer" target="_blank"><span>OECD · 2026</span><strong>AI Exposure Measure</strong><small>Cognitive, social and physical capability gaps</small></a>
 <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" rel="noreferrer" target="_blank"><span>WEF · 2025</span><strong>Future of Jobs Report</strong><small>Roles, skills and workforce change</small></a>
@@ -159,7 +170,7 @@
 <a href="https://www.ox.ac.uk/admissions/undergraduate/supercurricular-hub" rel="noreferrer" target="_blank"><span>OXFORD</span><strong>Supercurricular Hub</strong><small>Books, podcasts, challenges and subject resources</small></a>
 <a href="https://www.onetcenter.org/IP.html" rel="noreferrer" target="_blank"><span>O*NET®</span><strong>Interest Profiler</strong><small>RIASEC framework, scoring and career exploration</small></a>
 </div>
-<div class="holland-source-note"><strong>职业兴趣测评说明</strong><p>网站中的60道题依据RIASEC六类结构，结合中国国际高中学习与项目情境重新编写。该版本尚未建立本土常模，用于生涯探索和升学访谈，不用于招生筛选、心理诊断或高风险决策。</p><small>This page includes information informed by the O*NET Career Exploration Tools by USDOL/ETA. XFCC has modified and localized the material; USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA.</small></div>
+<div class="holland-source-note"><strong class="source-data-warning">O*NET 31.0职业信息更新边界 / O*NET 31.0 validation status</strong><p>现已列出2026年8月的O*NET 31.0作为岗位资料的最新核对基准。网站尚未对全部岗位建立O*NET-SOC编码对应和逐岗重核，因此不宣称当前756条提示已全部依据31.0校准。</p><strong>职业兴趣测评说明</strong><p>网站中的60道题依据RIASEC六类结构，结合中国国际高中学习与项目情境重新编写。该版本尚未建立本土常模，用于生涯探索和升学访谈，不用于招生筛选、心理诊断或高风险决策。</p><small>This page includes information informed by the O*NET Career Exploration Tools by USDOL/ETA. XFCC has modified and localized the material; USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA.</small></div>
 <div class="disclaimer"><strong data-i18n="disclaimerTitle">重要说明</strong><p data-i18n="disclaimer1"></p><p data-i18n="disclaimer2"></p></div>
 </section>
 </main>
@@ -187,8 +198,8 @@
 
 
 
-<script src="app.js?v=4.2.1.1"></script>
-<script src="matcher.js?v=4.2.1.1"></script>
-<script src="holland.js?v=4.2.1.1"></script>
-<div id="buildVersion" style="position:fixed;right:10px;bottom:8px;z-index:9999;font:600 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;opacity:.38;pointer-events:none">BUILD 4.2.1.1</div>
+<script src="app.js?v=4.2.2"></script>
+<script src="matcher.js?v=4.2.2"></script>
+<script src="holland.js?v=4.2.2"></script>
+<div id="buildVersion" style="position:fixed;right:10px;bottom:8px;z-index:9999;font:600 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;opacity:.38;pointer-events:none">BUILD 4.2.2</div>
 </body></html>
